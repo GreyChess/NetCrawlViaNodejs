@@ -330,7 +330,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nReactDOM.render(React.createElement(\"input\", { type: \"text\", placeholder: \"Please input the url\" }), document.getElementById(\"example\"));\n\n//# sourceURL=webpack:///./src/main/views/index.js?");
+eval("var ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nReactDOM.render(React.createElement('input', { type: \"text\", placeholder: \"Please input the url\" }), document.getElementById(\"example\"));\n\n//# sourceURL=webpack:///./src/main/views/index.js?");
 
 /***/ })
 

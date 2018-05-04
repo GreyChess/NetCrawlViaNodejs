@@ -1,4 +1,5 @@
 var ReactDOM = require('react-dom');
+var React = require('react');
 
 ReactDOM.render(
     <input type={"text"} placeholder={"Please input the url"}></input>,

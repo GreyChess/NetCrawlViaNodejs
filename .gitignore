@@ -10,10 +10,7 @@ lib
 build
 node_modules
 /bin/
-bin-debug/
 build/
 generated/
-nodejs/
-/node_res
-/public/thirdpartyjs/
+/public/javascripts/
 package-lock.json
