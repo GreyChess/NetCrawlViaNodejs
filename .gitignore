@@ -1,19 +1,12 @@
-.classpath
 .project
-.springBeans
 *.iml
 *.log
 .gradle/
 .idea/
 .metadata/
 .settings/
-.uuid
-work
-go.js
-go-debug.js
 /resources
 lib
-classes/
 build
 node_modules
 /bin/
@@ -22,3 +15,5 @@ build/
 generated/
 nodejs/
 /node_res
+/public/thirdpartyjs/
+package-lock.json
