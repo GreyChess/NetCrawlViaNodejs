@@ -24,11 +24,8 @@ module.exports = {
                     }
 
                 }
-                // {test: /\.jsx$/, loader: "jsx-loader"},
-                // {test: /.css$/, loader: 'style!css'}
             ]
     },
-
     // devServer: {
     //     inline: false,
     //     contentBase: './dist'
