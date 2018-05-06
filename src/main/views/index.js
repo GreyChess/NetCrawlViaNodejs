@@ -1,14 +1,21 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
 var $ = require('jquery');
+var EventProxy = require("eventproxy");
+
 const urlPrefix = "/users/hostUrl";
+let eventProxy = new EventProxy();
 
 class ResultDiv extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             arrayResult: [1, 2, 3]
-        }
+        };
+        let self = this;
+        eventProxy.addListener("URLRECEIVED", function(data){
+            self.setState({arrayResult: data});
+        })
     }
 
     renderListItems() {
@@ -31,7 +38,8 @@ class SubmitBtn extends React.Component {
     handleClick() {
         var url = urlPrefix;
         $.post(url, {"hostUrl": "test"}, function (data) {
-            console.log(data)
+            console.log(data);
+            eventProxy.emit("URLRECEIVED", JSON.parse(data));
         });
     }
 
