@@ -3,6 +3,27 @@ var React = require('react');
 var $ = require('jquery');
 const urlPrefix = "/users/hostUrl";
 
+class resultDiv extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            arrayResult:[]
+        }
+    }
+
+    renderListItems(){
+
+    }
+
+    render(){
+        return (
+            <ul>
+                {this.renderListItems()}
+            </ul>
+        )
+    }
+}
+
 class SubmitBtn extends React.Component {
     handleClick(){
         var url = urlPrefix;
@@ -26,7 +47,7 @@ class SubmitDiv extends React.Component {
     }
 }
 
-const element = <SubmitDiv/>
+const element = <SubmitDiv/>;
 
 ReactDOM.render(
     element,

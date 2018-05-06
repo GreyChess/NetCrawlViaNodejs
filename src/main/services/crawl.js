@@ -15,12 +15,8 @@ function start(hostUrl, successCallback) {
         arrayPageUrl.push(hostUrl + i);
     }
     eventProxy.after("BlogArticleHtml", arrayPageUrl.length * 20, function (articleUrls) {
-        res.write("<br/>");
-        res.write("articleUrls.lenth is" + articleUrls.length + "<br/>");
-        for (let i = 0; i < articleUrls.length; i++) {
-            res.write("articleUrl is" + articleUrls[i] + "<br/>")
-        }
-    })
+        successCallback(articleUrls);
+    });
     arrayPageUrl.forEach(function (pageUrl) {
         console.log(pageUrl);
         SuperAgent.get(pageUrl).end(function (err, pres) {

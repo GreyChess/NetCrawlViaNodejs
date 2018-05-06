@@ -8,11 +8,15 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/hostUrl', function (req, res, next) {
+    //req.body
     let defaultUrl = "https://www.cnblogs.com/sitehome/p/";
-    netCrawl.start(defaultUrl, function(){
-
+    netCrawl.start(defaultUrl, function(articleUrls){
+        let arrayResult = [];
+        articleUrls.forEach(function(url){
+            arrayResult.push(url);
+        });
+        res.send(JSON.stringify(arrayResult));
     });
-    res.send("ok"+"------>"+req.body.hostUrl);
 });
 
 module.exports = router;
