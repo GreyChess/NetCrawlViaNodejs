@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var netCrawl = require('../services/crawl');
+var NetCrawl = require('../services/crawl');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -10,9 +10,9 @@ router.get('/', function (req, res, next) {
 router.post('/hostUrl', function (req, res, next) {
     //req.body
     let defaultUrl = "https://www.cnblogs.com/sitehome/p/";
-    netCrawl.start(defaultUrl, function(articleUrls){
+    NetCrawl.start(defaultUrl, function(headers){
         let arrayResult = [];
-        articleUrls.forEach(function(url){
+        headers.forEach(function(url){
             arrayResult.push(url);
         });
         res.send(JSON.stringify(arrayResult));
