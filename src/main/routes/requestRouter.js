@@ -9,8 +9,8 @@ router.get('/', function (req, res, next) {
 
 router.post('/hostUrl', function (req, res, next) {
     //req.body
-    let defaultUrl = "https://www.cnblogs.com/sitehome/p/";
-    NetCrawl.start(defaultUrl, function(headers){
+    let relayUrl = "http://v2.sohu.com/public-api/feed?scene=CHANNEL&sceneId=15&size=20";
+    NetCrawl.start(relayUrl, function(headers){
         let arrayResult = [];
         headers.forEach(function(url){
             arrayResult.push(url);

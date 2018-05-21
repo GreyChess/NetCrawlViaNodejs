@@ -9,7 +9,6 @@
 lib
 build
 node_modules
-/bin/
 build/
 generated/
 /public/javascripts/
